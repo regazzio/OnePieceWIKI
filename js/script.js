@@ -29,12 +29,44 @@ const bounties = {
     "Jinbe": "1.100.000.000"
 };
 
-
 const fruits = {
     "Monkey D., Luffy": "Gomu Gomu no Mi (Hito Hito no Mi: Modelo Nika)",
     "Tony Tony, Chopper": "Hito Hito no Mi",
     "Nico, Robin": "Hana Hana no Mi",
     "Brook": "Yomi Yomi no Mi"
+};
+
+const applyFruitColor = (fruit) => {
+    // 🔴 RESET TOTAL (sempre primeiro)
+    charFruit.style.color = "black";
+    charFruit.style.textShadow = "none";
+    charFruit.style.webkitTextStroke = "0px";
+
+    if (fruit.includes("Gomu Gomu")) {
+        charFruit.style.color = "purple";
+
+    } else if (fruit.includes("Hito Hito")) {
+        charFruit.style.color = "red";
+        
+
+    } else if (fruit.includes("Hana Hana")) {
+        charFruit.style.color = "pink";
+        charFruit.style.textShadow = `
+            -1px -1px 0 black,
+             1px -1px 0 black,
+            -1px  1px 0 black,
+             1px  1px 0 black
+        `;
+
+    } else if (fruit.includes("Yomi Yomi")) {
+        charFruit.style.color = "orange";
+          charFruit.style.textShadow = `
+            -1px -1px 0 black,
+             1px -1px 0 black,
+            -1px  1px 0 black,
+             1px  1px 0 black
+        `;
+    }
 };
 
 const fetchCharacters = async () => {
@@ -65,17 +97,19 @@ const renderCharacter = (index) => {
         charRole.innerHTML = `Papel: ${char.role}`;
         charImage.src = char.character.images.webp.image_url;
         
-        
         charBounty.innerHTML = bounties[name] ? `฿ ${bounties[name]}` : "0";
         
-       
-        charFruit.innerHTML = fruits[name] ? fruits[name] : "Não possui";
+        
+        const fruit = fruits[name] ? fruits[name] : "Não possui";
+        charFruit.innerHTML = fruit;
+
+        applyFruitColor(fruit); // aplica cor
         
         inputSearch.value = '';
     }
 }
 
-//botoes
+// botões
 btnNext.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % charactersList.length;
     renderCharacter(currentIndex);

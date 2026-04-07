@@ -110,7 +110,13 @@ body {
     display: flex; 
     gap: 10px; 
 }
-
+.fruit_name {
+    text-shadow: 
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+} 
 .btn {
     flex: 1;
     padding: 12px;
