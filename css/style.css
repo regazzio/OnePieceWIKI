@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Special+Elite&display=swap');
 
 body {
-    background: #121212;
+    /* Imagem de fundo restaurada */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('../images/sunny.gif');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,25 +27,30 @@ body {
     border-radius: 5px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.8);
     text-align: center;
+    
 }
 
-.logo { width: 150px; margin-bottom: 15px; }
+.logo { 
+    width: 150px; 
+    margin-bottom: 15px; 
+}
 
 .image-container {
-    background: #fff;
+    
     border: 4px solid #333;
-    height: 350px;
-    overflow: hidden;
-    display: flex;
+    display: inline-block;   
     justify-content: center;
     align-items: center;
-    display: inline-block;
+   
 }
 
 .char_image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  
+    max-width: 250px;    /* Define um tamanho máximo para a imagem não ficar enorme */
+    width: 100%;         /* Mas permite que ela diminua em telas de celular */
+    height: auto;        /* Mantém a proporção original sempre */
+    display: block;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra leve na foto para dar profundidade */
 }
 
 .char_name {
@@ -51,8 +64,9 @@ body {
 .char_role {
     color: #d32f2f;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
+
 .char_bounty {
     font-family: 'Oswald', sans-serif;
     color: #5d4037;
@@ -62,21 +76,25 @@ body {
 }
 
 .char_bounty span {
-    color: #b71c1c; /* Vermelho para o valor */
+    color: #b71c1c; 
 }
+
 .char_fruit {
     font-family: 'Oswald', sans-serif;
     color: #5d4037;
     font-size: 1.1rem;
     margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 .char_fruit span {
-    color: #2e7d32; /* Verde para destacar o nome da fruta */
+    color: #2e7d32; 
     font-style: italic;
 }
 
-.search-form { margin-bottom: 15px; }
+.search-form { 
+    margin-bottom: 15px; 
+}
 
 .input_search {
     width: 100%;
@@ -84,9 +102,14 @@ body {
     border: 2px solid #5d4037;
     background: rgba(255,255,255,0.5);
     font-family: inherit;
+    outline: none;
+    box-sizing: border-box; 
 }
 
-.navigation { display: flex; gap: 10px; }
+.navigation { 
+    display: flex; 
+    gap: 10px; 
+}
 
 .btn {
     flex: 1;
@@ -97,6 +120,9 @@ body {
     cursor: pointer;
     font-family: 'Oswald', sans-serif;
     transition: 0.3s;
+    text-transform: uppercase;
 }
 
-.btn:hover { background: #3e2723; }
+.btn:hover { 
+    background: #3e2723; 
+}
