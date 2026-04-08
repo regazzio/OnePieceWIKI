@@ -37,17 +37,14 @@ const fruits = {
 };
 
 const applyFruitColor = (fruit) => {
-    // 🔴 RESET TOTAL (sempre primeiro)
     charFruit.style.color = "black";
     charFruit.style.textShadow = "none";
-    charFruit.style.webkitTextStroke = "0px";
 
     if (fruit.includes("Gomu Gomu")) {
         charFruit.style.color = "purple";
 
     } else if (fruit.includes("Hito Hito")) {
         charFruit.style.color = "red";
-        
 
     } else if (fruit.includes("Hana Hana")) {
         charFruit.style.color = "pink";
@@ -60,7 +57,7 @@ const applyFruitColor = (fruit) => {
 
     } else if (fruit.includes("Yomi Yomi")) {
         charFruit.style.color = "orange";
-          charFruit.style.textShadow = `
+         charFruit.style.textShadow = `
             -1px -1px 0 black,
              1px -1px 0 black,
             -1px  1px 0 black,
@@ -99,17 +96,16 @@ const renderCharacter = (index) => {
         
         charBounty.innerHTML = bounties[name] ? `฿ ${bounties[name]}` : "0";
         
-        
         const fruit = fruits[name] ? fruits[name] : "Não possui";
         charFruit.innerHTML = fruit;
 
-        applyFruitColor(fruit); // aplica cor
+        applyFruitColor(fruit);
         
         inputSearch.value = '';
     }
-}
+};
 
-// botões
+// BOTÕES
 btnNext.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % charactersList.length;
     renderCharacter(currentIndex);
@@ -123,13 +119,23 @@ btnPrev.addEventListener('click', () => {
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const searchTerm = inputSearch.value.toLowerCase();
-    const foundIndex = charactersList.findIndex(item => item.character.name.toLowerCase().includes(searchTerm));
+    
+    const foundIndex = charactersList.findIndex(item => 
+        item.character.name.toLowerCase().includes(searchTerm)
+    );
 
     if (foundIndex !== -1) {
         currentIndex = foundIndex;
         renderCharacter(currentIndex);
     } else {
         alert("Personagem não encontrado no bando!");
+    }
+});
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') {1    
+        document.querySelector('.btn-prev').click();
+    } else if (event.key === 'ArrowRight') {
+        document.querySelector('.btn-next').click();
     }
 });
 

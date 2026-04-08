@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Special+Elite&display=swap');
 
 body {
-    /* Imagem de fundo restaurada */
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                       url('../images/sunny.gif');
-    
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     
     display: flex;
@@ -18,117 +15,142 @@ body {
     font-family: 'Special Elite', cursive;
 }
 
-.wanted-poster {
-    background: #f4e4bc;
-    width: 90%;
-    max-width: 400px;
-    padding: 20px;
-    border: 15px solid #5d4037;
-    border-radius: 5px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-    text-align: center;
-    
-}
-
-.logo { 
-    width: 150px; 
-    margin-bottom: 15px; 
-}
-
-.image-container {
-    
-    border: 4px solid #333;
-    display: inline-block;   
-    justify-content: center;
+/* ENVOLVE TUDO PARA EMPILHAR CORRETAMENTE */
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-   
+    gap: 20px; 
+    width: 100%;
+    padding: 20px;
 }
 
-.char_image {
-  
-    max-width: 250px;    /* Define um tamanho máximo para a imagem não ficar enorme */
-    width: 100%;         /* Mas permite que ela diminua em telas de celular */
-    height: auto;        /* Mantém a proporção original sempre */
-    display: block;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra leve na foto para dar profundidade */
+/* BLOCO DE INFORMAÇÕES  */
+.info-board {
+    background: #f4e4bc; 
+    border: 4px solid #5d4037;
+    border-radius: 8px;
+    padding: 15px 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.8);
 }
 
 .char_name {
     font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
-    margin: 15px 0 5px;
-    color: #222;
+    font-size: 1.8rem;
+    color: #2b1b12;
     text-transform: uppercase;
+    margin: 0 0 5px 0;
+    border-bottom: 2px solid #5d4037;
 }
 
 .char_role {
-    color: #d32f2f;
+    color: #7a1c1c;
+    font-size: 0rem;
+    margin: 5px 0;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 
-.char_bounty {
+.char_bounty, .char_fruit {
     font-family: 'Oswald', sans-serif;
-    color: #5d4037;
-    font-size: 1.2rem;
-    margin-top: 10px;
-    letter-spacing: 1px;
+    font-size: 1.1rem;
+    color: #2b1b12;
+    margin: 5px 0;
 }
 
 .char_bounty span {
-    color: #b71c1c; 
+    color: #7a1c1c;
 }
 
-.char_fruit {
-    font-family: 'Oswald', sans-serif;
-    color: #5d4037;
-    font-size: 1.1rem;
-    margin-top: 5px;
-    margin-bottom: 20px;
+/* ANIMAÇÃO DO CARTAZ */
+@keyframes pulsarCartaz {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
 }
 
-.char_fruit span {
-    color: #2e7d32; 
-    font-style: italic;
+.wanted-poster {
+    width: 350px; 
+    height: 480px;
+    background-image: url('../images/procurado.jpg');
+    background-size: 100% 100%; /* Força a imagem a preencher a div toda */
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.9);
+    
+    animation: pulsarCartaz 4s infinite ease-in-out; 
 }
 
-.search-form { 
-    margin-bottom: 15px; 
+/*  IMAGEM DO PERSONAGEM  */
+.poster-image {
+    position: absolute;
+    /* Ajuste esses valores (top, left, width, height) para encaixar exatamente no quadrado em branco do seu procurado.jpg */
+    top: 22.3%; 
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 60%;
+    height: 40%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.char_image {
+    width: 100%;
+    height: 120%;
+    object-fit: contain;
+    filter: sepia(50%) contrast(110%);
+    scale: 1;
+}
+
+/* 🎛️ BLOCO DE CONTROLES  */
+.controls-board {
+    width: 90%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.search-form {
+    width: 100%;
 }
 
 .input_search {
     width: 100%;
-    padding: 10px;
-    border: 2px solid #5d4037;
-    background: rgba(255,255,255,0.5);
+    padding: 12px;
+    border: 3px solid #5d4037;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.85);
     font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
     outline: none;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
-.navigation { 
-    display: flex; 
-    gap: 10px; 
+.navigation {
+    display: flex;
+    gap: 10px;
 }
-.fruit_name {
-    text-shadow: 
-        -1px -1px 0 black,
-         1px -1px 0 black,
-        -1px  1px 0 black,
-         1px  1px 0 black;
-} 
+
 .btn {
     flex: 1;
     padding: 12px;
     background: #5d4037;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     font-family: 'Oswald', sans-serif;
-    transition: 0.3s;
+    font-size: 1.1rem;
     text-transform: uppercase;
+    transition: 0.3s;
 }
 
-.btn:hover { 
-    background: #3e2723; 
+.btn:hover {
+    background: #3e2723;
+    transform: translateY(-2px);
 }

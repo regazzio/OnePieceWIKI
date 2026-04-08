@@ -3,38 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>One Piece Wiki</title>
+    <title>One Piece Bounty Hunter</title>
+    
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-    <main class="wanted-poster">
-      
-
-        <div class="image-container">
-            <img src="#" alt="Character" class="char_image">
+    <div class="app-wrapper">
+        
+        <div class="info-board">
+            <h1 class="char_name">Monkey D. Luffy</h1>
+            <p class="char_role">Carregando...</p>
+            
+            <p class="char_bounty">
+                RECOMPENSA: <span>B 0</span>
+            </p>
+            
+            <p class="char_fruit">
+                AKUMA NO MI: <span>Nenhuma</span>
+            </p>
         </div>
 
-        <div class="char_info">
-            <h1 class="char_name">Carregando...</h1>
-            <p class="char_role"></p>
+        <div class="wanted-poster">
+            <div class="poster-image">
+                <img src="" alt="Personagem" class="char_image">
+            </div>
         </div>
 
-    <div class="char_info">
-    <p class="char_role"></p>
-    <p class="char_bounty">RECOMPENSA: <span></span></p>
-    <p class="char_fruit">AKUMA NO MI: <span></span></p>
-</div>
+        <div class="controls-board">
+            
+            <form class="search-form">
+                <input 
+                    type="search" 
+                    class="input_search" 
+                    placeholder="Digite o nome do personagem..." 
+                    required
+                >
+            </form>
 
- <form class="search-form">
-            <input type="search" class="input_search" placeholder="Nome do personagem..." required />
-        </form>
-<div class="navigation">
-            <button class="btn btn-prev">Anterior</button>
-            <button class="btn btn-next">Próximo</button>
+            <div class="navigation">
+                <button class="btn btn-prev">Anterior</button>
+                <button class="btn btn-next">Próximo</button>
+            </div>
+
         </div>
-    </main>
 
-    <script src="js/script.js"></script>
+    </div>
+
+    <script src="./js/script.js"></script>
 </body>
 </html>
