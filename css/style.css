@@ -72,10 +72,10 @@ body {
 }
 
 .wanted-poster {
-    width: 350px; 
-    height: 480px;
+    width: 400px; 
+    height: 550px;
     background-image: url('../images/procurado.jpg');
-    background-size: 100% 100%; /* Força a imagem a preencher a div toda */
+    background-size: 100% 100%; 
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
@@ -84,15 +84,14 @@ body {
     animation: pulsarCartaz 4s infinite ease-in-out; 
 }
 
-/*  IMAGEM DO PERSONAGEM  */
+/*IMAGEM DO PERSONAGEM*/
 .poster-image {
     position: absolute;
-    /* Ajuste esses valores (top, left, width, height) para encaixar exatamente no quadrado em branco do seu procurado.jpg */
-    top: 22.3%; 
+    top: 21.55%; 
     left: 50%;
     transform: translate(-50%, 0);
     width: 60%;
-    height: 40%;
+    height: 41.5%;
     object-fit: cover;
     overflow: hidden;
 }
@@ -105,7 +104,7 @@ body {
     scale: 1;
 }
 
-/* 🎛️ BLOCO DE CONTROLES  */
+/*BLOCO DE CONTROLES*/
 .controls-board {
     width: 90%;
     max-width: 450px;
@@ -115,7 +114,11 @@ body {
 }
 
 .search-form {
-    width: 100%;
+    position: absolute;
+    bottom: 95px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
 }
 
 .input_search {

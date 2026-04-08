@@ -44,7 +44,7 @@ const applyFruitColor = (fruit) => {
         charFruit.style.color = "purple";
 
     } else if (fruit.includes("Hito Hito")) {
-        charFruit.style.color = "red";
+        charFruit.style.color = "#d73131";
 
     } else if (fruit.includes("Hana Hana")) {
         charFruit.style.color = "pink";
