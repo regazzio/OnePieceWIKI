@@ -33,7 +33,7 @@ const fruits = {
     "Monkey D., Luffy": "Gomu Gomu no Mi (Hito Hito no Mi: Modelo Nika)",
     "Tony Tony, Chopper": "Hito Hito no Mi",
     "Nico, Robin": "Hana Hana no Mi",
-    "Brook": "Yomi Yomi no Mi"
+    "Brook": "Yomi Yomi no Mi",
 };
 
 const applyFruitColor = (fruit) => {
@@ -71,10 +71,9 @@ const fetchCharacters = async () => {
         const response = await fetch('https://api.jikan.moe/v4/anime/21/characters');
         const json = await response.json();
         
-        charactersList = json.data.filter(item => 
-            strawHatsNames.includes(item.character.name)
-        ).sort((a, b) => 
-            strawHatsNames.indexOf(a.character.name) - strawHatsNames.indexOf(b.character.name)
+    
+        charactersList = json.data.sort((a, b) => 
+            a.character.name.localeCompare(b.character.name)
         );
 
         renderCharacter(currentIndex);
@@ -94,9 +93,13 @@ const renderCharacter = (index) => {
         charRole.innerHTML = `Papel: ${char.role}`;
         charImage.src = char.character.images.webp.image_url;
         
-        charBounty.innerHTML = bounties[name] ? `฿ ${bounties[name]}` : "0";
+       charBounty.innerHTML = bounties[name] 
+    ? `฿ ${bounties[name]}` 
+    : "Não informado";
         
-        const fruit = fruits[name] ? fruits[name] : "Não possui";
+    const fruit = fruits[name] 
+    ? fruits[name] 
+    : "Desconhecida";
         charFruit.innerHTML = fruit;
 
         applyFruitColor(fruit);
@@ -118,9 +121,10 @@ btnPrev.addEventListener('click', () => {
 
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
+
     const searchTerm = inputSearch.value.toLowerCase();
-    
-    const foundIndex = charactersList.findIndex(item => 
+
+    const foundIndex = charactersList.findIndex(item =>
         item.character.name.toLowerCase().includes(searchTerm)
     );
 
@@ -128,14 +132,12 @@ searchForm.addEventListener('submit', (e) => {
         currentIndex = foundIndex;
         renderCharacter(currentIndex);
     } else {
-        alert("Personagem não encontrado no bando!");
-    }
-});
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') {1    
-        document.querySelector('.btn-prev').click();
-    } else if (event.key === 'ArrowRight') {
-        document.querySelector('.btn-next').click();
+    
+        charName.innerHTML = " NÃO ENCONTRADO ";
+        charRole.innerHTML = "Personagem não está no bando";
+        charBounty.innerHTML = "RECOMPENSA: -";
+        charFruit.innerHTML = "AKUMA NO MI: -";
+        charImage.src = "";
     }
 });
 
