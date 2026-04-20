@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Special+Elite&display=swap');
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('../images/sunny.gif');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), 
+                      url('../images/sunnyy.gif');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -15,7 +15,7 @@ body {
     font-family: 'Special Elite', cursive;
 }
 
-/* ENVOLVE TUDO PARA EMPILHAR CORRETAMENTE */
+
 .app-wrapper {
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@ body {
     padding: 20px;
 }
 
-/* BLOCO DE INFORMAÇÕES  */
+
 .info-board {
     background: #f4e4bc; 
     border: 4px solid #5d4037;
@@ -64,7 +64,7 @@ body {
     color: #7a1c1c;
 }
 
-/* ANIMAÇÃO DO CARTAZ */
+
 @keyframes pulsarCartaz {
     0% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
@@ -84,7 +84,7 @@ body {
     animation: pulsarCartaz 4s infinite ease-in-out; 
 }
 
-/*IMAGEM DO PERSONAGEM*/
+
 .poster-image {
     position: absolute;
     top: 21.7%; 
@@ -105,7 +105,7 @@ body {
     scale: 1;
 }
 
-/*BLOCO DE CONTROLES*/
+
 .controls-board {
     width: 90%;
     max-width: 450px;

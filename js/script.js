@@ -14,7 +14,7 @@ let currentIndex = 0;
 const strawHatsNames = [
     "Monkey D., Luffy", "Roronoa, Zoro", "Nami", "Usopp", "Sanji", 
     "Tony Tony, Chopper", "Nico, Robin", "Franky", "Brook", "Jinbe",
-      // Extras
+    
     "Trafalgar Law",
     "Eustass Kid",
     "Shanks",
@@ -29,7 +29,23 @@ const strawHatsNames = [
     "Charlotte Linlin",
     "Enel",
     "Rob Lucci",
-    "Sabo"
+    "Sabo",
+    "Edward, Newgate",
+    "Marco",
+    "Charlotte, Katakuri",
+    "Sakazuki",
+    "Sengoku",
+    "Smoker",
+    "Koby",
+    "Helmeppo",
+    "Gecko, Moria",
+    "Bartholomew, Kuma",
+    "Gol D., Roger",
+    "Arlong",
+    "Enel",
+    "Magellan",
+    "Monkey D., Garp",
+    "Silvers, Rayleigh"
 ];
 
 const bounties = {
@@ -57,7 +73,17 @@ const bounties = {
     "Charlotte, Linlin": "4.388.000.000",
     "Enel": "500.000.000",
     "Rob, Lucci": "2.000.000.000",
-    "Sabo": "602.000.000"
+    "Sabo": "602.000.000",
+    "Edward, Newgate" : "5.046.000.000",
+    "Marco": "1.374.000.000",
+    "Charlotte, Katakuri": "1.057.000.000",
+    "Koby": "500.000.000",
+    "Gecko, Moria": "320.000.000",
+    "Bartholomew, Kuma": "296.000.000",
+    "Gol D., Roger": "5.564.800.000",
+    "Arlong": "20.000.000",
+    "Enel": "500.000.000",
+  
 };
 
 const fruits = {
@@ -76,8 +102,26 @@ const fruits = {
     "Kaidou": "Uo Uo no Mi, Modelo: Seiryu",
     "Charlotte, Linlin": "Soru Soru no Mi",
     "Enel": "Goro Goro no Mi",
-    "Rob Lucci": "Neko Neko no Mi, Modelo: Leopardo",
+    "Rob, Lucci": "Neko Neko no Mi, Modelo: Leopardo",
     "Sabo": "Mera Mera no Mi",
+    "Edward, Newgate" : "Gura Gura no mi",
+    "Marco": "Tori Tori no Mi, Modelo: Fênix",
+    "Charlotte, Katakuri": "Mochi Mochi no Mi",
+    "Smoker" : "Moku Moku no mi",
+    "Sakazuki" : "Magu Magu no Mi",
+    "Sengoku" : "Hito Hito no Mi, Modelo: Daibutsu",
+    "Gecko, Moria": "Kage Kage no Mi",
+    "Bartholomew, Kuma": "Nikyu Nikyu no Mi",
+    "Magellan": "Doku Doku no Mi",
+    "Shanks": "Não possui",
+    "Dracule, Mihawk": "Não possui",
+    "Koby": "Não possui",
+    "Helmeppo": "Não possui",
+    "Gol D., Roger": "Não possui",
+    "Arlong": "Não possui",
+    "Monkey D., Garp": "Não possui",
+    "Silvers, Rayleigh": "Não possui"
+   
 };
 
 const applyFruitColor = (fruit) => {
@@ -156,6 +200,10 @@ const applyFruitColor = (fruit) => {
         charFruit.style.color = "#002c7e";
         
     }
+    else if (fruit.includes("Gura")) {
+        charFruit.style.color = "#3879f0";
+        
+    }
     else if (fruit.includes("Soru Soru")) {
         charFruit.style.color = "#66004d";
         
@@ -165,7 +213,7 @@ const applyFruitColor = (fruit) => {
         
     }
     else if (fruit.includes("Neko Neko")) {
-        charFruit.style.color = "#4d3b02";
+        charFruit.style.color = "#94740b";
         charFruit.style.textShadow = `
             -1px -1px 0 black,
              1px -1px 0 black,
@@ -173,6 +221,42 @@ const applyFruitColor = (fruit) => {
              1px  1px 0 black
         `;
     }
+    else if (fruit.includes("Tori Tori")) {
+        charFruit.style.color = "#6cc6fa"
+    }
+    else if (fruit.includes("Mochi Mochi")) {
+        charFruit.style.color = "#e0e0e0"
+         charFruit.style.textShadow = `
+            -1px -1px 0 black,
+             1px -1px 0 black,
+            -1px  1px 0 black,
+             1px  1px 0 black
+        `;
+    }
+    else if (fruit.includes("Magu Magu")) {
+        charFruit.style.color = "#c73a0f"
+        
+    }
+    else if (fruit.includes("Moku Moku")) {
+        charFruit.style.color = "#b9b1b1"
+        charFruit.style.textShadow = `
+            -1px -1px 0 black,
+             1px -1px 0 black,
+            -1px  1px 0 black,
+             1px  1px 0 black
+        `;
+    }
+    else if (fruit.includes("Kage Kage")) {
+        charFruit.style.color = "#006405"
+          
+    }
+    else if (fruit.includes("Nikyu")) {
+        charFruit.style.color = "#d35656"
+    }
+    else if (fruit.includes("Doku Doku")) {
+        charFruit.style.color = "#49009c"
+    }
+    
 };
 
 const fetchCharacters = async () => {
@@ -217,7 +301,7 @@ const renderCharacter = (index) => {
     }
 };
 
-// BOTÕES
+
 btnNext.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % charactersList.length;
     renderCharacter(currentIndex);
