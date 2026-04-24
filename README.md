@@ -1,67 +1,41 @@
-# 🏴‍☠️ One Piece Bounty Hunter
+🏴‍☠️ One Piece Bounty Hunter
 
-Projeto web inspirado no universo de One Piece que permite visualizar personagens do bando do Chapéu de Palha, suas recompensas e habilidades (Akuma no Mi), com uma interface estilizada em formato de cartaz de procurado.
+A web project inspired by One Piece that allows users to explore characters, their bounties, and abilities (Devil Fruits), presented in a stylized “WANTED” poster format.
 
----
+🎯 Objective
 
-## 🎯 Objetivo
+The goal of this project is to practice front-end development using HTML, CSS, and JavaScript, consuming an external API to display dynamic data in a visual and interactive way.
 
-O objetivo do projeto é praticar desenvolvimento front-end utilizando HTML, CSS e JavaScript, consumindo uma API externa para exibir dados dinâmicos de forma visual e interativa.
+It also aims to recreate the iconic "WANTED" poster aesthetic from the anime, providing a more immersive user experience.
 
-Além disso, o projeto busca recriar a estética dos cartazes de "WANTED" do anime, proporcionando uma experiência mais imersiva para o usuário.
+⚙️ Features
+🔍 Search characters by name
+🧭 Navigate between characters (previous/next)
+🖼️ Display character image in poster style
+💰 Show character bounty
+🍇 Show Devil Fruit (when applicable)
+🎨 Custom colors for each fruit
+⚠️ Friendly error handling (no alert popups)
+🎞️ Smooth poster animations
+📱 Responsive and styled layout
+⭐ Includes data for main and popular characters
+🌐 API Used
 
----
+This project consumes data from:
 
-## ⚙️ Funcionalidades
+Jikan API
+🧠 Technologies
+HTML5
+CSS3
+JavaScript (Vanilla)
+Fetch API
+💡 What I Learned
 
-- 🔍 Busca de personagens pelo nome
-- 🧭 Navegação entre personagens (anterior/próximo)
-- 🖼️ Exibição de imagem do personagem em estilo cartaz
-- 💰 Exibição de recompensa (bounty)
-- 🍇 Exibição da Akuma no Mi (quando houver)
-- 🎨 Cores personalizadas para cada fruta
-- ⚠️ Tratamento de erro amigável (mensagens exibidas na tela, sem alert)
-- 🎞️ Animação suave no cartaz
-- 📱 Layout responsivo e estilizado
+During development, I practiced concepts such as:
 
----
-
-## 🌐 API utilizada
-
-O projeto consome dados da API pública:
-
-- Jikan API (MyAnimeList)
-
----
-
-## 🧠 Tecnologias utilizadas
-
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-- Fetch API
-
----
-
-## 💡 Aprendizados
-
-Durante o desenvolvimento, foram praticados conceitos como:
-
-- Manipulação do DOM
-- Consumo de APIs
-- Tratamento de erros
-- Organização de layout com CSS
-- Posicionamento absoluto e responsividade
-- Experiência do usuário (UX)
-
----
-
-## 🚀 Melhorias futuras
-
-- 🔥 Adicionar mais personagens além do bando principal
-- 🎵 Inserir efeitos sonoros (ex: cartaz sendo exibido)
-- 🖌️ Melhorar ainda mais o design do cartaz
-- 📊 Exibir mais informações dos personagens
-- 🌍 Internacionalização
-
----
+DOM manipulation
+API consumption
+Error handling
+CSS layout organization
+Absolute positioning and responsiveness
+User experience (UX)
